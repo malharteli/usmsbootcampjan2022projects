@@ -56,8 +56,8 @@ public class BankController {
 	//put
 	
 	@PutMapping(value="/{bankId}/{address}",params = "version=1.0")
-	public ResponseEntity<?> updateBank(@PathVariable("bankId") long bankId,@PathVariable("address") String address){
-		Bank bankObj=this.bankService.updateBank(bankId,address);
+	public ResponseEntity<?> updateBank(@PathVariable("bankId") long bankId,@RequestBody Bank bank){
+		Bank bankObj=this.bankService.updateBank(bankId,bank);
 		if(bankObj!=null)
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(bankObj);
 		else

@@ -19,15 +19,8 @@ public class TraderService {
 	
 	//insert 	
 	public Trader addTrader(long bankId,Trader trader) {
-	
-		 Bank bank=this.bankService.getBankById(bankId);
-		 if(bank!=null) 
-			 trader.setBank(bank);			
-		 
-		 else
-			 trader.setBank(null);
-		 this.traderRepo.save(trader);
-		 return trader;
+		return this.traderRepo.save(trader);
+		
 		 
 		}
 	
@@ -62,7 +55,7 @@ public List<Trader> updateBank(long bankId) {
 		List<Trader> traderList=this.traderRepo.findByBank(bank);
 		
 	    for(Trader trader:traderList) {
-	    	trader.setBank(null);
+//	    	trader.setBank(null);
 	    	this.traderRepo.save(trader);
 	    }
 		

@@ -17,8 +17,8 @@ public class BankMutationResolver implements GraphQLMutationResolver{
 		return this.bankService.addBank(new Bank(0,bankInput.getBankName(),bankInput.getAddress()));
 	}
 	
-	public Bank updateBank(long bankId,String address) {
-		return this.bankService.updateBank(bankId, address);
+	public Bank updateBank(long bankId,Bank bank) {
+		return this.bankService.updateBank(bankId, bank);
 	}
 
 }

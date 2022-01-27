@@ -43,11 +43,11 @@ public class BankService {
 	
 	//update
 	
-	public Bank updateBank(long bankId,String address) {
+	public Bank updateBank(long bankId,Bank bank) {
 		
-		Bank bank=this.getBankById(bankId);
-		if(bank!=null) {
-			bank.setAddress(address);
+		Bank bankObj=this.getBankById(bankId);
+		if(bankObj!=null) {
+		
 		}
 		
 		return this.bankRepo.save(bank);

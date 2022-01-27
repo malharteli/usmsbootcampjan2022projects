@@ -49,41 +49,41 @@ public class TraderController {
 	
 	
 
-	@PutMapping(value="/{bankId}",params = "version=1.0")
-	public List<Trader> updateTraderWithFKNull(@PathVariable("bankId") long bankId){
-		
-		return this.traderService.updateBank(bankId);
-		
-		
-	}
+//	@PutMapping(value="/{bankId}",params = "version=1.0")
+//	public List<Trader> updateTraderWithFKNull(@PathVariable("bankId") long bankId){
+//		
+//		return this.traderService.updateBank(bankId);
+//		
+//		
+//	}
 	
 	
 	//get
-			@GetMapping(value="/filters/{traderId}",params = "version=1.0")
-			public ResponseEntity<?> getTraderByFields(@PathVariable("traderId") long traderId,
-					@RequestParam(name = "fields", required = false) String fields){
-				
-				Map<Object,Object> model=new HashMap<>();
-		    	
-		    	Trader trader = this.traderService.getTraderById(traderId);
-		    	
-		    	if(trader!=null)
-		    	{
-		    		//fields refers to runtime selection
-		    		ObjectMapper mapper = Squiggly.init(new ObjectMapper(), fields);  		
-					return ResponseEntity.ok(SquigglyUtils.stringify(mapper, trader));
-
-		    	}
-		    	else
-		    	{
-			         model.put("message", "trader not existing");
-				        
-			         return ResponseEntity.ok(model);
-		    	}
-
-				
-				
-			}
+//			@GetMapping(value="/filters/{traderId}",params = "version=1.0")
+//			public ResponseEntity<?> getTraderByFields(@PathVariable("traderId") long traderId,
+//					@RequestParam(name = "fields", required = false) String fields){
+//				
+//				Map<Object,Object> model=new HashMap<>();
+//		    	
+//		    	Trader trader = this.traderService.getTraderById(traderId);
+//		    	
+//		    	if(trader!=null)
+//		    	{
+//		    		//fields refers to runtime selection
+//		    		ObjectMapper mapper = Squiggly.init(new ObjectMapper(), fields);  		
+//					return ResponseEntity.ok(SquigglyUtils.stringify(mapper, trader));
+//
+//		    	}
+//		    	else
+//		    	{
+//			         model.put("message", "trader not existing");
+//				        
+//			         return ResponseEntity.ok(model);
+//		    	}
+//
+//				
+//				
+			//}
 	
 	
 		
