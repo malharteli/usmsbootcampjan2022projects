@@ -1,4 +1,7 @@
-
+schema{
+	query:Query
+	mutation:Mutation
+}
 
 type Trader {
 
@@ -19,7 +22,22 @@ middleName: String
 
 }
 
+
+input TraderInput{
+	firstName: String
+	lastName: String
+	middleName: String
+	tradingLimit:Long
+	dob:String
+	email:String
+}
+
 extend type Query {
 	findAllTraders:[Trader]
 	findTrader(traderId: ID):Trader
+}
+
+
+extend type Mutation{
+	createTrader(traderInput:TraderInput):Trader
 }

@@ -37,11 +37,11 @@ public class Trader {
 	private long tradingLimit;
 	@Column(name="Email")
 	private String email;
-//	@DateTimeFormat(iso = ISO.DATE)
+	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name="DOB")
-	private String dob;
-//	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-//	@JoinColumn(foreignKey = @ForeignKey(name = "Bank_Id"), name = "Bank_Id" )
-//	private Bank bank;
+	private LocalDate dob;
+	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(foreignKey = @ForeignKey(name = "Bank_Id"), name = "Bank_Id" )
+	private Bank bank;
 
 }

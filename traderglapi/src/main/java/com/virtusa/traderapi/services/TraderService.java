@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.virtusa.traderapi.models.Bank;
 import com.virtusa.traderapi.models.Trader;
+import com.virtusa.traderapi.models.TraderInput;
 import com.virtusa.traderapi.repositories.BankRepo;
 import com.virtusa.traderapi.repositories.TraderRepo;
 
@@ -18,7 +19,7 @@ public class TraderService {
 	private BankService bankService;
 	
 	//insert 	
-	public Trader addTrader(long bankId,Trader trader) {
+	public Trader addTrader(long bankId, Trader trader) {
 		return this.traderRepo.save(trader);
 		
 		 

@@ -29,25 +29,23 @@ import com.virtusa.traderapi.services.TraderService;
 public class TraderController {
 	@Autowired
 	private TraderService traderService;
-	
-	//post
-	@PostMapping(value="/{bankId}",params = "version=1.0")
-	public ResponseEntity<?> addTrader(@PathVariable("bankId") long bankId,@RequestBody Trader trader){
-		Trader traderObj=this.traderService.addTrader(bankId,trader);
-		if(traderObj!=null)
+
+	// post
+	@PostMapping(value = "/{bankId}", params = "version=1.0")
+	public ResponseEntity<?> addTrader(@PathVariable("bankId") long bankId, @RequestBody Trader trader) {
+		Trader traderObj = this.traderService.addTrader(bankId, trader);
+		if (traderObj != null)
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(traderObj);
 		else
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Trader Not Created");
-		
+
 	}
-	
-	//get
-	@GetMapping(value="/",params = "version=1.0")
-	public List<Trader> getAllTraders(){
+
+	// get
+	@GetMapping(value = "/", params = "version=1.0")
+	public List<Trader> getAllTraders() {
 		return this.traderService.getAllTraders();
 	}
-	
-	
 
 //	@PutMapping(value="/{bankId}",params = "version=1.0")
 //	public List<Trader> updateTraderWithFKNull(@PathVariable("bankId") long bankId){
@@ -56,9 +54,8 @@ public class TraderController {
 //		
 //		
 //	}
-	
-	
-	//get
+
+	// get
 //			@GetMapping(value="/filters/{traderId}",params = "version=1.0")
 //			public ResponseEntity<?> getTraderByFields(@PathVariable("traderId") long traderId,
 //					@RequestParam(name = "fields", required = false) String fields){
@@ -83,10 +80,6 @@ public class TraderController {
 //
 //				
 //				
-			//}
-	
-	
-		
-	
-	
+	// }
+
 }

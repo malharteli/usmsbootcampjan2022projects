@@ -11,8 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TraderInput {
-	private FullName fullName;
+	private String firstName;
+	private String lastName;
+	private String middleName;
 	private long tradingLimit;
 	private String email;
-	private LocalDate dob;
+	private String dob;
 }

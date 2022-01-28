@@ -118,7 +118,11 @@
             <artifactId>graphiql-spring-boot-starter</artifactId>
             <version>5.0.2</version>
         </dependency>
-		
+		<dependency>
+    <groupId>com.graphql-java</groupId>
+    <artifactId>graphql-java-extended-scalars</artifactId>
+    <version>2022-01-08T22-46-25-c2e844f</version>
+</dependency>
         <dependency>
 	        <groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>

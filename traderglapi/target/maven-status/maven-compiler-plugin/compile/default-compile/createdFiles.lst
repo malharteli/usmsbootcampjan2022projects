@@ -14,3 +14,4 @@ com\virtusa\traderapi\models\Trader.class
 com\virtusa\traderapi\models\FullName.class
 com\virtusa\traderapi\TraderapiApplication.class
 com\virtusa\traderapi\repositories\TraderRepo.class
+com\virtusa\traderapi\mutations\TraderMutationResolver.class
