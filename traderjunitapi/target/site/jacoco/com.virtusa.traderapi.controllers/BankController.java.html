@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BankController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">traderapi</a> &gt; <a href="index.source.html" class="el_package">com.virtusa.traderapi.controllers</a> &gt; <span class="el_source">BankController.java</span></div><h1>BankController.java</h1><pre class="source lang-java linenums">package com.virtusa.traderapi.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.virtusa.traderapi.models.Bank;
+import com.virtusa.traderapi.services.BankService;
+
+@RestController
+@RequestMapping(&quot;/banks&quot;)
+<span class="fc" id="L22">public class BankController {</span>
+	@Autowired
+	private BankService bankService;
+	
+	//post
+	@PostMapping(value=&quot;/&quot;,params = &quot;version=1.0&quot;)
+	public ResponseEntity&lt;?&gt; addBank(@RequestBody Bank bank){
+<span class="nc" id="L29">		Bank bankObj=this.bankService.addBank(bank);</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">		if(bankObj!=null)</span>
+<span class="nc" id="L31">			return ResponseEntity.status(HttpStatus.ACCEPTED).body(bankObj);</span>
+		else
+<span class="nc" id="L33">			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(&quot;Bank Not Created&quot;);</span>
+		
+	}
+	
+	//get
+	@GetMapping(value=&quot;/&quot;,params = &quot;version=1.0&quot;)
+	public List&lt;Bank&gt; getAllBanks(){
+<span class="nc" id="L40">		return this.bankService.getAllBanks();</span>
+	}
+	
+	//get with id
+	
+	@GetMapping(value=&quot;/{bankId}&quot;,params = &quot;version=1.0&quot;)
+	public ResponseEntity&lt;?&gt; getBankById(@PathVariable(&quot;bankId&quot;) long bankId){
+<span class="nc" id="L47">		Bank bankObj=this.bankService.getBankById(bankId);</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">		if(bankObj!=null)</span>
+<span class="nc" id="L49">			return ResponseEntity.status(HttpStatus.ACCEPTED).body(bankObj);</span>
+		else
+<span class="nc" id="L51">			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(&quot;Bank Not Found&quot;);</span>
+		
+	}
+	
+	
+	//put
+	
+	@PutMapping(value=&quot;/{bankId}/{address}&quot;,params = &quot;version=1.0&quot;)
+	public ResponseEntity&lt;?&gt; updateBank(@PathVariable(&quot;bankId&quot;) long bankId,@PathVariable(&quot;address&quot;) String address){
+<span class="nc" id="L60">		Bank bankObj=this.bankService.updateBank(bankId,address);</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">		if(bankObj!=null)</span>
+<span class="nc" id="L62">			return ResponseEntity.status(HttpStatus.ACCEPTED).body(bankObj);</span>
+		else
+<span class="nc" id="L64">			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(&quot;Bank Not Created&quot;);</span>
+		
+	}
+	
+	
+	//delete
+	
+	@DeleteMapping(value=&quot;/{bankId}&quot;,params = &quot;version=1.0&quot;)
+	public ResponseEntity&lt;?&gt; deleteBankById(@PathVariable(&quot;bankId&quot;) long bankId){
+	
+<span class="nc bnc" id="L74" title="All 2 branches missed.">		if(this.bankService.deleteBankById(bankId))</span>
+<span class="nc" id="L75">			return ResponseEntity.status(HttpStatus.ACCEPTED).body(&quot;Bank with &quot;+bankId+&quot;Deleted&quot;);</span>
+		else
+<span class="nc" id="L77">			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(&quot;Bank Not Found&quot;);</span>
+		
+	}
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TraderService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">traderapi</a> &gt; <a href="index.source.html" class="el_package">com.virtusa.traderapi.services</a> &gt; <span class="el_source">TraderService.java</span></div><h1>TraderService.java</h1><pre class="source lang-java linenums">package com.virtusa.traderapi.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.virtusa.traderapi.models.Bank;
+import com.virtusa.traderapi.models.Trader;
+import com.virtusa.traderapi.repositories.BankRepo;
+import com.virtusa.traderapi.repositories.TraderRepo;
+
+@Service
+<span class="fc" id="L14">public class TraderService {</span>
+	@Autowired
+	private TraderRepo traderRepo;
+	@Autowired
+	private BankService bankService;
+	
+	//insert 	
+	public Trader addTrader(long bankId,Trader trader) {
+	
+<span class="nc" id="L23">		 Bank bank=this.bankService.getBankById(bankId);</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">		 if(bank!=null) </span>
+<span class="nc" id="L25">			 trader.setBank(bank);		</span>
+		 
+		 else
+<span class="nc" id="L28">			 trader.setBank(null);</span>
+<span class="nc" id="L29">		 this.traderRepo.save(trader);</span>
+<span class="nc" id="L30">		 return trader;</span>
+		 
+		}
+	
+	
+	
+	//list all the traders
+	
+	public List&lt;Trader&gt; getAllTraders(){
+<span class="nc" id="L39">		return this.traderRepo.findAll();</span>
+	}
+	
+	//list trader by Id
+	
+	public Trader getTraderById(long traderId) {
+<span class="nc" id="L45">		return this.traderRepo.findById(traderId).orElse(null);</span>
+	}
+	
+	//delete
+
+	public boolean deleteTraderById(long traderId) {
+<span class="nc" id="L51">		boolean status=false;</span>
+<span class="nc" id="L52">		this.traderRepo.deleteById(traderId);</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">		if(this.getTraderById(traderId)==null)</span>
+<span class="nc" id="L54">			status=true;</span>
+<span class="nc" id="L55">		return status;</span>
+	}
+	
+	//update
+	
+public List&lt;Trader&gt; updateBank(long bankId) {
+		
+<span class="nc" id="L62">		Bank bank=this.bankService.getBankById(bankId);</span>
+		
+<span class="nc" id="L64">		List&lt;Trader&gt; traderList=this.traderRepo.findByBank(bank);</span>
+		
+<span class="nc bnc" id="L66" title="All 2 branches missed.">	    for(Trader trader:traderList) {</span>
+<span class="nc" id="L67">	    	trader.setBank(null);</span>
+<span class="nc" id="L68">	    	this.traderRepo.save(trader);</span>
+<span class="nc" id="L69">	    }</span>
+		
+<span class="nc" id="L71">		return traderList;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

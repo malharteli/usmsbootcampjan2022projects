@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.virtusa.traderapi.TraderapiApplicationTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 7.053 s <<< FAILURE! - in com.virtusa.traderapi.TraderapiApplicationTest
+hasTexts{String}[1]  Time elapsed: 0.02 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.virtusa.traderapi.TraderapiApplicationTest.hasTexts(TraderapiApplicationTest.java:51)
+
+hasTexts{String}[2]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.virtusa.traderapi.TraderapiApplicationTest.hasTexts(TraderapiApplicationTest.java:51)
+
