@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/apigateway/apigateway.iml" filepath="$PROJECT_DIR$/apigateway/apigateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circuitbreaker/circuitbreaker.iml" filepath="$PROJECT_DIR$/circuitbreaker/circuitbreaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudoauth2apigateway/cloudoauth2apigateway.iml" filepath="$PROJECT_DIR$/cloudoauth2apigateway/cloudoauth2apigateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configserver/configserver.iml" filepath="$PROJECT_DIR$/configserver/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/traderapi/traderapi.iml" filepath="$PROJECT_DIR$/traderapi/traderapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tradersecuredapi/tradersecureapi.iml" filepath="$PROJECT_DIR$/tradersecuredapi/tradersecureapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/usmsbootcampjan2022projects.iml" filepath="$PROJECT_DIR$/.idea/usmsbootcampjan2022projects.iml" />
+    </modules>
+  </component>
+</project>

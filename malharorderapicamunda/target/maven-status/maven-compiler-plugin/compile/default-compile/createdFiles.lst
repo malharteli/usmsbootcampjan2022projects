@@ -1,0 +1,4 @@
+com\exampl\orderapicamunda\LoggerDelegate.class
+com\exampl\orderapicamunda\CamundaApplication.class
+com\exampl\orderapicamunda\models\Order.class
+com\exampl\orderapicamunda\ProcessConstants.class

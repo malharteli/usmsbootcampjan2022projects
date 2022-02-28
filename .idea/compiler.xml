@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="apigateway" />
+        <module name="eurekaserver" />
+        <module name="circuitbreaker" />
+        <module name="traderapi" />
+        <module name="tradersecureapi" />
+        <module name="cloudoauth2apigateway" />
+        <module name="configserver" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="apigateway" target="1.8" />
+      <module name="circuitbreaker" target="1.8" />
+      <module name="cloudoauth2apigateway" target="1.8" />
+      <module name="configserver" target="1.8" />
+      <module name="eurekaserver" target="1.8" />
+      <module name="jwtsecurity" target="1.8" />
+      <module name="jwtsecurity (1)" target="1.8" />
+      <module name="traderapi" target="1.8" />
+      <module name="tradersecureapi" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="apigateway" options="-parameters" />
+      <module name="circuitbreaker" options="-parameters" />
+      <module name="cloudoauth2apigateway" options="-parameters" />
+      <module name="configserver" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
+      <module name="jwtsecurity" options="-parameters" />
+      <module name="jwtsecurity (1)" options="-parameters" />
+      <module name="traderapi" options="-parameters" />
+      <module name="tradersecureapi" options="-parameters" />
+    </option>
+  </component>
+</project>

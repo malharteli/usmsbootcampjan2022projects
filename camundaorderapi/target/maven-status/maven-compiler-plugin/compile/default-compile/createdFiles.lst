@@ -1,0 +1,4 @@
+com\usbootcamp\camundaorderapi\OrderLoggerDelegate.class
+com\usbootcamp\camundaorderapi\models\Order.class
+com\usbootcamp\camundaorderapi\CamundaApplication.class
+com\usbootcamp\camundaorderapi\ProcessConstants.class
